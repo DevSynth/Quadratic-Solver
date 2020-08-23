@@ -1,30 +1,31 @@
 import cmath
 
-print ("""Quadratic Formula in standard form
-ax²+bx+c=0
-""")
+def calc(a, b, c):
+    d = (b**2) -4*a*c
+    denom = (2*a)
 
-a = float(input("a term? "))
-b = float(input("b term? "))
-c = float(input("c term? "))
+    print ('''Solving Equation
 
-d = (b**2) -4*a*c
-denom = (2*a)
+        ''' )
 
-print ('''Solving Equation
+    astr = str('{0}'.format(a))
 
-       ''' )
+    bstr = str('{0}'.format(b))
 
-astr = str('{0}'.format(a))
+    cstr = str('{0}'.format(c))
 
-bstr = str('{0}'.format(b))
+    print (astr + "x²" + "+" + bstr + "x"+ "+" +cstr + " = 0") 
 
-cstr = str('{0}'.format(c))
+    x1 = ((-b+cmath.sqrt(d))/ denom).real
+    x2 = ((-b-cmath.sqrt(d))/ denom).real
 
-print (astr + "x²" + "+" + bstr + "x"+ "+" +cstr + " = 0") 
+    print ("Solutions : x1 = {0} and x2 = {1}".format(x1,x2))
+    print ("Quadratic Formula in standard form\nax²+bx+c=0")
 
-x1 = ((-b+cmath.sqrt(d))/ denom).real
-x2 = ((-b-cmath.sqrt(d))/ denom).real
+if __name__ == "__main__":
+    a = float(input("a term? "))
+    b = float(input("b term? "))
+    c = float(input("c term? "))
 
-print ("Solutions : x1 = {0} and x2 = {1}".format(x1,x2))
+    calc(a, b, c)
 
